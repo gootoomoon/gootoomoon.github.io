@@ -106,12 +106,14 @@ Code.getStringParamFromUrl = function(name, defaultValue) {
  * @return {string} User's language.
  */
 Code.getLang = function() {
+/*
   var lang = Code.getStringParamFromUrl('lang', '');
   if (Code.LANGUAGE_NAME[lang] === undefined) {
     // Default to English.
-    //lang = 'en';
-    lang = 'zh-hans';//默认中文
+    lang = 'en';
   }
+*/
+  lang = 'zh-hans';//默认中文
   return lang;
 };
 
@@ -473,7 +475,7 @@ Code.init = function() {
 Code.initLanguage = function() {
   // Set the HTML's language and direction.
   var rtl = Code.isRtl();
-  document.dir = rtl ? 'rtl' : 'ltr';
+  document.dir = rtl ? 'rtl' : 'ltr';//左右镜像显示
   document.head.parentElement.setAttribute('lang', Code.LANG);
 
   // Sort languages alphabetically.
